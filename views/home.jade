@@ -1,43 +1,44 @@
 extends layout
 
 block content
+  
+  div(ng-app="travelCosts")
+    div(ng-controller='TravelCostController')
+      .row.slider-row
+        .col-sm-4
+          div#slider-food.slider
+          span.min= t('costCategories.food.option1')
+          span.slider-label= t('costCategories.food.label')
+          span.max= t('costCategories.food.option3')
 
-  div(ng-controller='TravelCostController')
-    .row.slider-row
-      .col-sm-4
-        div#slider-food.slider
-        span.min= t('costCategories.food.option1')
-        span.slider-label= t('costCategories.food.label')
-        span.max= t('costCategories.food.option3')
+        .col-sm-4
+          div#slider-accommodation.slider
+          span.min= t('costCategories.accommodation.option1')
+          span.slider-label= t('costCategories.accommodation.label')
+          span.max= t('costCategories.accommodation.option3')
 
-      .col-sm-4
-        div#slider-accommodation.slider
-        span.min= t('costCategories.accommodation.option1')
-        span.slider-label= t('costCategories.accommodation.label')
-        span.max= t('costCategories.accommodation.option3')
+        .col-sm-4
+          div#slider-transportation.slider
+          span.min= t('costCategories.transportation.option1')
+          span.slider-label= t('costCategories.transportation.label')
+          span.max= t('costCategories.transportation.option3')
+          
+      .row
+        .col-sm-3
+          h3= t('itinerary.title')
 
-      .col-sm-4
-        div#slider-transportation.slider
-        span.min= t('costCategories.transportation.option1')
-        span.slider-label= t('costCategories.transportation.label')
-        span.max= t('costCategories.transportation.option3')
-        
-    .row
-      .col-sm-3
-        h3= t('itinerary.title')
+          div.itinerary
+            input.itinerary-input(type='text')
+            div.itinerary-box
+              ul
+                li(ng-repeat="place in itinerary")
+                  .row
+                    .col-sm-1
+                      div.marker &nbsp;
+                    .col-sm-9
+                      span.location {{place}}
+                    .col-sm-1
+                      span.pull-right x
 
-        div.itinerary
-          input.itinerary-input(type='text')
-          div.itinerary-box
-            ul
-              li(ng-repeat="place in itinerary")
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location {{place}}
-                  .col-sm-1
-                    span.pull-right x
-
-      .col-sm-9
-        div#map-canvas
+        .col-sm-9
+          div#map-canvas
