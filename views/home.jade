@@ -49,14 +49,15 @@ block content
             input.itinerary-input#waypoint(type='text', ng-model="waypoint")
             div.itinerary-box
               ul
-                li(ng-repeat="item in itinerary")
+                li(ng-repeat="item in itinerary track by $index")
                   .row
                     .col-sm-1
                       div.marker &nbsp;
                     .col-sm-9
                       span.location {{item.place.formatted_address}}
                     .col-sm-1
-                      span.pull-right x
+                      div.pull-right.icon-action-grey600.icon-action-grey600-ic_delete_grey600_24dp(
+                        ng-click='deleteWaypoint(item, $index)')
 
         .col-sm-9
           map#itinerary-map

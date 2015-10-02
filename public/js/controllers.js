@@ -9,7 +9,7 @@ angular.module('travelCosts.controllers', []).
       map.setZoom(2);
 
       var input = (document.getElementById('waypoint'));
-      var autocomplete = new google.maps.places.Autocomplete(input);
+      var autocomplete = new google.maps.places.Autocomplete(input, {types: ['(regions)']});
       autocomplete.bindTo('bounds', map);
 
       autocomplete.addListener('place_changed', function(e) { 
@@ -26,4 +26,9 @@ angular.module('travelCosts.controllers', []).
         $scope.$apply();
       });
     });
+
+    $scope.deleteWaypoint = function (waypoint, i) {
+      $scope.itinerary.splice(i, 1);
+      waypoint.marker.setMap(null);
+    };
   });
