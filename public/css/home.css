@@ -1,0 +1,9 @@
+#map-canvas {
+  height: 500px;
+  width: 100%; }
+
+.slider-row {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .slider-row .slider {
+    height: 20px; }
