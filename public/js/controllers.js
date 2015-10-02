@@ -1,6 +1,6 @@
-angular.module('travelCosts.controllers', []).
+angular.module('travelCosts.controllers', ['travelCosts.services']).
   
-  controller('TravelCostController', function ($scope, $http) {
+  controller('TravelCostController', function ($scope, $http, CostsService) {
 
     $scope.itinerary = [];
 
@@ -13,22 +13,30 @@ angular.module('travelCosts.controllers', []).
       autocomplete.bindTo('bounds', map);
 
       autocomplete.addListener('place_changed', function(e) { 
-        var place = autocomplete.getPlace();
-        var location = place.geometry.location;
-
-        var marker = new google.maps.Marker({
-            map: $scope.map,
-            position: location
-        });
-
-        $scope.itinerary.push({ place: place, marker: marker });
-        $scope.waypoint = '';
-        $scope.$apply();
+        $scope.addWaypoint(autocomplete.getPlace());
       });
     });
+
+    $scope.addWaypoint = function (waypoint) {
+      var location = waypoint.geometry.location;
+
+      var marker = new google.maps.Marker({
+          map: $scope.map,
+          position: location
+      });
+
+      $scope.itinerary.push({ place: waypoint, marker: marker });
+      $scope.calculateCost();
+      $scope.waypoint = '';
+      $scope.$apply();
+    };
 
     $scope.deleteWaypoint = function (waypoint, i) {
       $scope.itinerary.splice(i, 1);
       waypoint.marker.setMap(null);
+    };
+
+    $scope.calculateCost = function () {
+      var costs = CostsService.getCostFor('location');
     };
   });
