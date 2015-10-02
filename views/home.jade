@@ -46,7 +46,7 @@ block content
           h3= t('itinerary.title')
 
           div.itinerary
-            input.itinerary-input#waypoint(type='text', ng-model="waypoint")
+            input.itinerary-input#waypoint(type='text', ng-model="waypoint" autofocus)
             div.itinerary-box
               ul
                 li(ng-repeat="item in itinerary track by $index")
