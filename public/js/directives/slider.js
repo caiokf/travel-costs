@@ -7,7 +7,8 @@ angular.module('travelCosts.directives', [])
       scope: {
         min: "=min",
         max: "=max",
-        start: "=start"
+        start: "=start",
+        ngModel: '='
       },
 
       link: function (scope, element, attr) {
@@ -18,6 +19,16 @@ angular.module('travelCosts.directives', [])
             'min': [ scope.min ],
             'max': [ scope.max ]
           }
+        });
+
+        element[0].noUiSlider.on('update', function(values, handle) {
+          var value = values[handle];
+          if (handle) {
+            scope.ngModel = value;
+          } else {
+            scope.ngModel = Math.round(value);
+          }
+          setTimeout(function(){ scope.$apply(); });
         });
       }
     }
