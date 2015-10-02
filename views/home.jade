@@ -30,53 +30,14 @@ block content
           input.itinerary-input(type='text')
           div.itinerary-box
             ul
-              li
+              li(ng-repeat="place in itinerary")
                 .row
                   .col-sm-1
                     div.marker &nbsp;
                   .col-sm-9
-                    span.location Porto Alegre
+                    span.location {{place}}
                   .col-sm-1
                     span.pull-right x
-              li
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location Buenos Aires
-                  .col-sm-1
-                    span.pull-right x
-              li
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location Mendoza
-                  .col-sm-1
-                    span.pull-right x
-              li
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location Santiago
-                  .col-sm-1
-                    span.pull-right x
-              li
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location Cusco
-                  .col-sm-1
-                    span.pull-right X
-              li
-                .row
-                  .col-sm-1
-                    div.marker &nbsp;
-                  .col-sm-9
-                    span.location Lima
-                  .col-sm-1
-                    span.pull-right X
+
       .col-sm-9
         div#map-canvas
