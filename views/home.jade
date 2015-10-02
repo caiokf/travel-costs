@@ -6,25 +6,25 @@ block content
     .row.slider-row
       .col-sm-4
         div#slider-food.slider
-        span.min Groceries
-        span.slider-label Food
-        span.max Fancy Restaurant
+        span.min= t('costCategories.food.option1')
+        span.slider-label= t('costCategories.food.label')
+        span.max= t('costCategories.food.option3')
 
       .col-sm-4
         div#slider-accommodation.slider
-        span.min CouchSurfing
-        span.slider-label Accommodation
-        span.max Hotels
+        span.min= t('costCategories.accommodation.option1')
+        span.slider-label= t('costCategories.accommodation.label')
+        span.max= t('costCategories.accommodation.option3')
 
       .col-sm-4
         div#slider-transportation.slider
-        span.min Hitchhiking
-        span.slider-label Transportation
-        span.max Train/Bus
+        span.min= t('costCategories.transportation.option1')
+        span.slider-label= t('costCategories.transportation.label')
+        span.max= t('costCategories.transportation.option3')
         
     .row
       .col-sm-3
-        h3 I am traveling to...
+        h3= t('itinerary.title')
 
         div.itinerary
           input.itinerary-input(type='text')

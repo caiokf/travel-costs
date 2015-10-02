@@ -1,0 +1,22 @@
+{
+    "costCategories": {
+        "food": {
+            "label": "Food",
+            "option1": "Groceries",
+            "option2": "Restaurants",
+            "option3": "Fancy Restaurant",
+        },
+        "accommodation": {
+            "label": "Accommodation",
+            "option1": "CouchSurfing",
+            "option2": "Hostel",
+            "option3": "Hotel",
+        },
+        "transportation": {
+            "label": "Transportation",
+            "option1": "Hitchhiking",
+            "option2": "Ridesharing",
+            "option3": "Bus/Train",
+        }
+    }
+}

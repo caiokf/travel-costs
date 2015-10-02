@@ -34,6 +34,12 @@ var contactController = require('./controllers/contact');
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
+var i18n = require('i18next');
+i18n.init({
+    saveMissing: true,
+    debug: true
+});
+
 /**
  * Create Express server.
  */
@@ -63,6 +69,7 @@ app.use(logger('dev'));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(i18n.handle);
 app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
@@ -128,6 +135,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { failureRedire
  */
 app.use(errorHandler());
 
+i18n.registerAppHelper(app);
 /**
  * Start Express server.
  */
