@@ -3,6 +3,10 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
   controller('TravelCostController', function ($scope, $http, CostsService) {
 
     $scope.itinerary = [];
+    $scope.cost = {
+      amount: 0,
+      currency: 'USD'
+    }
 
     $scope.$on('mapInitialized', function(event, map) {
       $scope.map = map;

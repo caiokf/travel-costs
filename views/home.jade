@@ -43,7 +43,7 @@ block content
             
       .row
         .col-sm-3
-          div.cost  0.00 USD
+          div.cost {{cost.amount | number:2}} {{cost.currency}}
 
           h3= t('itinerary.title')
 
