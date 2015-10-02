@@ -1,0 +1,32 @@
+.slider-row {
+
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: $lighter-font-color;
+
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+  .slider {
+    height: 20px;
+    margin-bottom: 5px;
+  }
+
+  .categoryLabel {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 800;
+    font-size: 1.25em;
+  }
+
+  .middle {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+  }
+}

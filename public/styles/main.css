@@ -1,4 +1,32 @@
 @charset "UTF-8";
+.btn {
+  border-radius: 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.11), 1px 1px 0 rgba(255, 255, 255, 0.21) inset; }
+  .btn:focus {
+    outline: none; }
+
+.btn-link {
+  box-shadow: none; }
+
+.btn-default, .btn-default:focus {
+  background-image: linear-gradient(to bottom, #ffffff 60%, #f8f8f8 100%); }
+
+.form-control:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
+
+.alert {
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+.navbar-default {
+  border: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+  .navbar-default .navbar-nav > li > a {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.2s linear; }
+
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -8327,25 +8355,6 @@ button.close {
 .fa-fonticons:before {
   content: ""; }
 
-.btn {
-  border-radius: 0;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.11), 1px 1px 0 rgba(255, 255, 255, 0.21) inset; }
-  .btn:focus {
-    outline: none; }
-
-.btn-link {
-  box-shadow: none; }
-
-.btn-default, .btn-default:focus {
-  background-image: linear-gradient(to bottom, #ffffff 60%, #f8f8f8 100%); }
-
-.form-control:focus {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
-
-.alert {
-  border-radius: 0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
-
 .navbar-default {
   border: 0;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
@@ -8355,38 +8364,17 @@ button.close {
     text-transform: uppercase;
     transition: all 0.2s linear; }
 
+.navbar-nav img {
+  width: 30px;
+  height: 30px;
+  margin: -15px 15px -15px; }
+
 #map-canvas {
   height: 500px;
   width: 100%; }
 
 body {
   color: #888480; }
-
-.slider-row {
-  text-transform: uppercase;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 30px; }
-  .slider-row .slider {
-    height: 20px; }
-  .slider-row .max {
-    color: #a8a4a0;
-    margin-top: 3px;
-    float: right; }
-  .slider-row .min {
-    color: #a8a4a0;
-    margin-top: 3px;
-    float: left; }
-  .slider-row .slider-label {
-    width: 100%;
-    font-size: 1.25em;
-    font-weight: 600;
-    text-align: center;
-    height: 100%;
-    position: absolute;
-    top: 2em;
-    left: 0; }
 
 .itinerary .itinerary-input {
   padding: 5px;
@@ -8423,6 +8411,49 @@ body {
   .itinerary li .location {
     display: inline-block;
     width: 100%; }
+
+.slider-row {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: #a8a4a0;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+  .slider-row .slider {
+    height: 20px;
+    margin-bottom: 5px; }
+  .slider-row .categoryLabel {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 800;
+    font-size: 1.25em; }
+  .slider-row .middle {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0; }
+
+.btn {
+  border-radius: 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.11), 1px 1px 0 rgba(255, 255, 255, 0.21) inset; }
+  .btn:focus {
+    outline: none; }
+
+.btn-link {
+  box-shadow: none; }
+
+.btn-default, .btn-default:focus {
+  background-image: linear-gradient(to bottom, #ffffff 60%, #f8f8f8 100%); }
+
+.form-control:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
+
+.alert {
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
 
 html {
   position: relative;

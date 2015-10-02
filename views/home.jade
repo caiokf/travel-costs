@@ -1,28 +1,46 @@
 extends layout
 
 block content
-  
-  div(ng-app="travelCosts")
+
+  div(ng-app='travelCosts')
     div(ng-controller='TravelCostController')
       .row.slider-row
-        .col-sm-4
-          div#slider-food.slider
-          span.min= t('costCategories.food.option1')
-          span.slider-label= t('costCategories.food.label')
-          span.max= t('costCategories.food.option3')
+        .row
+          .col-sm-4
+            div.categoryLabel= t('costCategories.food.label')
 
-        .col-sm-4
-          div#slider-accommodation.slider
-          span.min= t('costCategories.accommodation.option1')
-          span.slider-label= t('costCategories.accommodation.label')
-          span.max= t('costCategories.accommodation.option3')
+          .col-sm-4
+            div.categoryLabel= t('costCategories.accommodation.label')
 
-        .col-sm-4
-          div#slider-transportation.slider
-          span.min= t('costCategories.transportation.option1')
-          span.slider-label= t('costCategories.transportation.label')
-          span.max= t('costCategories.transportation.option3')
-          
+          .col-sm-4
+            div.categoryLabel= t('costCategories.transportation.label')
+
+        .row
+          .col-sm-4
+            div#slider-food.slider
+
+          .col-sm-4
+            div#slider-accommodation.slider
+
+          .col-sm-4
+            div#slider-transportation.slider
+
+        .row
+          .col-sm-4
+            span.pull-left= t('costCategories.food.option1')
+            span.middle= t('costCategories.food.option2')
+            span.pull-right= t('costCategories.food.option3')
+
+          .col-sm-4
+            span.pull-left= t('costCategories.accommodation.option1')
+            span.middle= t('costCategories.accommodation.option2')
+            span.pull-right= t('costCategories.accommodation.option3')
+
+          .col-sm-4
+            span.pull-left= t('costCategories.transportation.option1')
+            span.middle= t('costCategories.transportation.option2')
+            span.pull-right= t('costCategories.transportation.option3')
+            
       .row
         .col-sm-3
           h3= t('itinerary.title')
