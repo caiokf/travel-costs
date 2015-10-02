@@ -1,0 +1,1 @@
+angular.module('travelCosts', ['travelCosts.controllers']);

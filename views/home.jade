@@ -2,80 +2,81 @@ extends layout
 
 block content
 
-  .row.slider-row
-    .col-sm-4
-      div#slider-food.slider
-      span.min Groceries
-      span.slider-label Food
-      span.max Fancy Restaurant
+  div(ng-controller='TravelCostController')
+    .row.slider-row
+      .col-sm-4
+        div#slider-food.slider
+        span.min Groceries
+        span.slider-label Food
+        span.max Fancy Restaurant
 
-    .col-sm-4
-      div#slider-accommodation.slider
-      span.min CouchSurfing
-      span.slider-label Accommodation
-      span.max Hotels
+      .col-sm-4
+        div#slider-accommodation.slider
+        span.min CouchSurfing
+        span.slider-label Accommodation
+        span.max Hotels
 
-    .col-sm-4
-      div#slider-transportation.slider
-      span.min Hitchhiking
-      span.slider-label Transportation
-      span.max Train/Bus
-      
-  .row
-    .col-sm-3
-      h3 I am traveling to...
+      .col-sm-4
+        div#slider-transportation.slider
+        span.min Hitchhiking
+        span.slider-label Transportation
+        span.max Train/Bus
+        
+    .row
+      .col-sm-3
+        h3 I am traveling to...
 
-      div.itinerary
-        input.itinerary-input(type='text')
-        div.itinerary-box
-          ul
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Porto Alegre
-                .col-sm-1
-                  span.pull-right x
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Buenos Aires
-                .col-sm-1
-                  span.pull-right x
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Mendoza
-                .col-sm-1
-                  span.pull-right x
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Santiago
-                .col-sm-1
-                  span.pull-right x
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Cusco
-                .col-sm-1
-                  span.pull-right X
-            li
-              .row
-                .col-sm-1
-                  div.marker &nbsp;
-                .col-sm-9
-                  span.location Lima
-                .col-sm-1
-                  span.pull-right X
-    .col-sm-9
-      div#map-canvas
+        div.itinerary
+          input.itinerary-input(type='text')
+          div.itinerary-box
+            ul
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Porto Alegre
+                  .col-sm-1
+                    span.pull-right x
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Buenos Aires
+                  .col-sm-1
+                    span.pull-right x
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Mendoza
+                  .col-sm-1
+                    span.pull-right x
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Santiago
+                  .col-sm-1
+                    span.pull-right x
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Cusco
+                  .col-sm-1
+                    span.pull-right X
+              li
+                .row
+                  .col-sm-1
+                    div.marker &nbsp;
+                  .col-sm-9
+                    span.location Lima
+                  .col-sm-1
+                    span.pull-right X
+      .col-sm-9
+        div#map-canvas
