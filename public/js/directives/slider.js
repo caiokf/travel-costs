@@ -13,6 +13,7 @@ angular.module('travelCosts.directives', [])
       link: function (scope, element, attr) {
         noUiSlider.create(element[0], {
           start: [ scope.start ],
+          step: 1,
           range: {
             'min': [ scope.min ],
             'max': [ scope.max ]
