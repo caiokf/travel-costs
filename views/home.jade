@@ -46,15 +46,15 @@ block content
           h3= t('itinerary.title')
 
           div.itinerary
-            input.itinerary-input(type='text')
+            input.itinerary-input#waypoint(type='text', ng-model="waypoint")
             div.itinerary-box
               ul
-                li(ng-repeat="place in itinerary")
+                li(ng-repeat="item in itinerary")
                   .row
                     .col-sm-1
                       div.marker &nbsp;
                     .col-sm-9
-                      span.location {{place}}
+                      span.location {{item.place.formatted_address}}
                     .col-sm-1
                       span.pull-right x
 

@@ -2,25 +2,28 @@ angular.module('travelCosts.controllers', []).
   
   controller('TravelCostController', function ($scope, $http) {
 
-    $scope.itinerary = [
-      'Porto Alegre',
-      'Buenos Aires',
-      'Mendoza',
-      'Santiago',
-      'Cusco',
-      'Lima',
-      'Bogota'
-    ];
+    $scope.itinerary = [];
 
     $scope.$on('mapInitialized', function(event, map) {
-      //map.setCenter(0,0);
+      $scope.map = map;
       map.setZoom(2);
+
+      var input = (document.getElementById('waypoint'));
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.bindTo('bounds', map);
+
+      autocomplete.addListener('place_changed', function(e) { 
+        var place = autocomplete.getPlace();
+        var location = place.geometry.location;
+
+        var marker = new google.maps.Marker({
+            map: $scope.map,
+            position: location
+        });
+
+        $scope.itinerary.push({ place: place, marker: marker });
+        $scope.waypoint = '';
+        $scope.$apply();
+      });
     });
-
-    $scope.init = function () {
-
-    }
-    
-    $scope.init();
-
   });
