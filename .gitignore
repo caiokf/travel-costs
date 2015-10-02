@@ -26,4 +26,4 @@ bower_components
 Thumbs.db
 
 config/secrets.js
-countriesCost.json
+public/styles/main.css
