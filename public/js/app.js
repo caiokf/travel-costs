@@ -1,1 +1,1 @@
-angular.module('travelCosts', ['travelCosts.controllers', 'ngMap']);
+angular.module('travelCosts', ['travelCosts.controllers', 'travelCosts.directives', 'ngMap']);
