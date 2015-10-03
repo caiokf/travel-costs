@@ -5,9 +5,13 @@ module.exports = function(config) {
         'public/js/lib/angular.min.js',
         'node_modules/chai-angular/chai-angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
-        'public/js/*.js',
+
+        'public/js/**/*.js',
         'specs/public/*.js',
-        'specs/public/services/*.js'
+        'specs/public/models/*.js'
+    ],
+    exclude: [
+        'public/js/lib/bootstrap.min.js'
     ],
     plugins: ['karma-mocha', 'karma-chai', 'karma-phantomjs-launcher', 'karma-mocha-reporter'],
     frameworks: ['mocha', 'chai'],
