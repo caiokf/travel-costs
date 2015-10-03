@@ -1,7 +1,7 @@
 {
     "app": {
         "logoAltText": "Toggle Navigation"
-    }
+    },
     "costCategories": {
         "food": {
             "label": "Food",
@@ -26,14 +26,20 @@
         "title": "I am traveling to..."
     },
     "account": {
+        "signin": "Sign in",
         "login": "Login",
         "logout": "Logout",
         "createAccount": "Create Account",
         "accountManagement": "Account Management",
         "myAccount": "My Account",
         "email": "Email",
+        "password": "Password",
         "resetPassword": "Reset Password",
         "resetPasswordInstructions": "Enter your email address below and we will send you password reset instructions.",
-        "forgotPassword": "Forgot Password"
+        "forgotPassword": "Forgot Password",
+        "forgotPasswordQuestion": "Forgot your Password?",
+        "signinFacebook": "Sign in with Facebook",
+        "signinGoogle": "Sign in with Google",
+        "signinGithub": "Sign in with GitHub"
     }
 }
