@@ -8,6 +8,11 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
       currency: 'USD'
     }
 
+    $scope.$watch('sliderFood', function() { $scope.cost.amount = $scope.calculateCost(); });
+    $scope.$watch('sliderTransportation', function() { $scope.cost.amount = $scope.calculateCost(); });
+    $scope.$watch('sliderAccommodation', function() { $scope.cost.amount = $scope.calculateCost(); });
+    $scope.$watch('itinerary', function() { $scope.cost.amount = $scope.calculateCost(); });
+
     $scope.$on('mapInitialized', function(event, map) {
       $scope.map = map;
       map.setZoom(2);
@@ -30,7 +35,7 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
       });
 
       $scope.itinerary.push({ place: waypoint, marker: marker });
-      $scope.calculateCost();
+      $scope.cost.amount = $scope.calculateCost();
       $scope.waypoint = '';
       $scope.$apply();
     };
@@ -38,11 +43,8 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
     $scope.deleteWaypoint = function (waypoint, i) {
       $scope.itinerary.splice(i, 1);
       waypoint.marker.setMap(null);
+      $scope.cost.amount = $scope.calculateCost();
     };
-
-    $scope.$watch('sliderFood', function() { $scope.calculateCost(); });
-    $scope.$watch('sliderTransportation', function() { $scope.calculateCost(); });
-    $scope.$watch('sliderAccommodation', function() { $scope.calculateCost(); });
 
     $scope.calculateCost = function () {
       var costs = CostsService.getCostFor('location');
@@ -76,6 +78,10 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
         return {option1: option1, option2: option2, option3: option3 };
       };
 
+      if ($scope.itinerary.length === 0) {
+        return 0;
+      }
+
       var foodCost = 0;
       var foodMultipliers = multipliers($scope.sliderFood);
       foodCost += costs.food.option1 * foodMultipliers.option1;
@@ -94,6 +100,6 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
       transportationCost += costs.transportation.option2 * transportationMultipliers.option2;
       transportationCost += costs.transportation.option3 * transportationMultipliers.option3;
 
-      $scope.cost.amount = foodCost + transportationCost + accommodationCost;
+      return foodCost + transportationCost + accommodationCost;
     };
   });
