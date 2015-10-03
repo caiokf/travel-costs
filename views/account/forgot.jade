@@ -8,7 +8,7 @@ block content
       .form-group
         p= t('account.resetPasswordInstructions')
         label.control-label(for='email')= t('account.email')
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+        input.form-control(type='email', name='email', id='email', placeholder=t('account.email'), autofocus=true)
       .form-group
         button.btn.btn-primary(type='submit')
           i.fa.fa-key

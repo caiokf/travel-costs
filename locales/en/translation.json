@@ -34,12 +34,14 @@
         "myAccount": "My Account",
         "email": "Email",
         "password": "Password",
+        "confirmPassword": "Confirm Password",
         "resetPassword": "Reset Password",
         "resetPasswordInstructions": "Enter your email address below and we will send you password reset instructions.",
         "forgotPassword": "Forgot Password",
         "forgotPasswordQuestion": "Forgot your Password?",
         "signinFacebook": "Sign in with Facebook",
         "signinGoogle": "Sign in with Google",
-        "signinGithub": "Sign in with GitHub"
+        "signinGithub": "Sign in with GitHub",
+        "signup": "Sign up"
     }
 }
