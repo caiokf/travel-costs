@@ -1,4 +1,7 @@
 {
+    "app": {
+        "logoAltText": "Toggle Navigation"
+    }
     "costCategories": {
         "food": {
             "label": "Food",
@@ -21,5 +24,12 @@
     },
     "itinerary": {
         "title": "I am traveling to..."
+    },
+    "account": {
+        "login": "Login",
+        "logout": "Logout",
+        "createAccount": "Create Account",
+        "accountManagement": "Account Management",
+        "myAccount": "My Account"
     }
 }

@@ -2,7 +2,7 @@
   .container
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
+        span.sr-only= t('app.logoAltText')
         span.icon-bar
         span.icon-bar
         span.icon-bar
@@ -13,12 +13,12 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         if !user
-          li(class=title=='Login'?'active':undefined)
-            a(href='/login') Login
-          li(class=title=='Create Account'?'active':undefined)
-            a(href='/signup') Create Account
+          li(class=title== t('account.login')?'active':undefined)
+            a(href='/login')= t('account.login')
+          li(class=title== t('account.createAccount')?'active':undefined)
+            a(href='/signup')= t('account.createAccount')
         else
-          li.dropdown(class=title=='Account Management'?'active':undefined)
+          li.dropdown(class=title== t('account.accountManagement')?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
                 img.profile-picture(src='#{user.profile.picture}')
@@ -28,7 +28,7 @@
               i.caret
             ul.dropdown-menu
               li
-                a(href='/account') My Account
+                a(href='/account')= t('account.myAccount')
               li.divider
               li
-                a(href='/logout') Logout
+                a(href='/logout')= t('account.logout')
