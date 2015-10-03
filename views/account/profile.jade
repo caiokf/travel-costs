@@ -2,92 +2,92 @@ extends ../layout
 
 block content
   .page-header
-    h3 Profile Information
+    h3= t('account.profilePageTitle')
 
   form.form-horizontal(action='/account/profile', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
-      label.col-sm-3.control-label(for='email') Email
+      label.col-sm-3.control-label(for='email')= t('account.email')
       .col-sm-7
         input.form-control(type='email', name='email', id='email', value='#{user.email}')
     .form-group
-      label.col-sm-3.control-label(for='name') Name
+      label.col-sm-3.control-label(for='name')= t('account.name')
       .col-sm-7
         input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
     .form-group
-      label.col-sm-3.control-label(for='gender') Gender
+      label.col-sm-3.control-label(for='gender')= t('account.gender')
       .col-sm-4
         label.radio.col-sm-4
           input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-          span Male
+          span= t('account.genderMale')
         label.radio.col-sm-4
           input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-          span Female
+          span= t('account.genderFemale')
     .form-group
-      label.col-sm-3.control-label(for='location') Location
+      label.col-sm-3.control-label(for='location')= t('account.location')
       .col-sm-7
         input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
     .form-group
-      label.col-sm-3.control-label(for='website') Website
+      label.col-sm-3.control-label(for='website')= t('account.website')
       .col-sm-7
         input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
     .form-group
-      label.col-sm-3.control-label(for='gravatar') Gravatar
+      label.col-sm-3.control-label(for='gravatar')= t('account.gravatar')
       .col-sm-4
         img(src="#{user.gravatar()}", class='profile', width='100', height='100')
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn.btn-primary(type='submit')
           i.fa.fa-pencilr
-          | Update Profile
+          = t('account.updateProfile')
 
   .page-header
-    h3 Change Password
+    h3= t('account.changePassword')
 
   form.form-horizontal(action='/account/password', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
-      label.col-sm-3.control-label(for='password') New Password
+      label.col-sm-3.control-label(for='password')= t('account.newPassword')
       .col-sm-7
         input.form-control(type='password', name='password', id='password')
     .form-group
-      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+      label.col-sm-3.control-label(for='confirmPassword')= t('account.confirmPassword')
       .col-sm-7
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn-primary(type='submit')
           i.fa.fa-lock
-          | Change Password
+          = t('account.changePassword')
 
   .page-header
-    h3 Delete Account
+    h3= t('account.deleteAccountTitle')
 
   form.form-horizontal(action='/account/delete', method='POST')
     .form-group
-      p.col-sm-offset-3.col-sm-4 You can delete your account, but keep in mind this action is irreversible.
+      p.col-sm-offset-3.col-sm-4= t('account.deleteAccountConfirmationMessage')
       input(type='hidden', name='_csrf', value=_csrf)
       .col-sm-offset-3.col-sm-4
         button.btn.btn-danger(type='submit')
           i.fa.fa-trash
-          | Delete my account
+          = t('account.deleteAccountAction')
 
   .page-header
-    h3 Linked Accounts
+    h3= t('account.linkedAccounts')
   .form-horizontal
     .form-group
       .col-sm-offset-3.col-sm-4
         if user.google
-          p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+          p: a.text-danger(href='/account/unlink/google')= t('account.unlinkGoogle')
         else
-          p: a(href='/auth/google') Link your Google account
+          p: a(href='/auth/google')= t('account.linkGoogle')
       .col-sm-offset-3.col-sm-4
         if user.facebook
-          p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
+          p: a.text-danger(href='/account/unlink/facebook')= t('account.unlinkFacebook')
         else
-          p: a(href='/auth/facebook') Link your Facebook account
+          p: a(href='/auth/facebook')= t('account.linkFacebook')
       .col-sm-offset-3.col-sm-4
         if user.github
-          p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
+          p: a.text-danger(href='/account/unlink/github')= t('account.unlinkGithub')
         else
-          p: a(href='/auth/github') Link your GitHub account
+          p: a(href='/auth/github')= t('account.linkGithub')
