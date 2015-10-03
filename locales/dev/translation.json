@@ -1,7 +1,7 @@
 {
     "app": {
         "logoAltText": "Toggle Navigation"
-    }
+    },
     "costCategories": {
         "food": {
             "label": "Food",
@@ -30,6 +30,10 @@
         "logout": "Logout",
         "createAccount": "Create Account",
         "accountManagement": "Account Management",
-        "myAccount": "My Account"
+        "myAccount": "My Account",
+        "email": "Email",
+        "resetPassword": "Reset Password",
+        "resetPasswordInstructions": "Enter your email address below and we will send you password reset instructions.",
+        "forgotPassword": "Forgot Password"
     }
 }

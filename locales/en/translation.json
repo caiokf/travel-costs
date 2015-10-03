@@ -1,22 +1,39 @@
 {
+    "app": {
+        "logoAltText": "Toggle Navigation"
+    }
     "costCategories": {
         "food": {
             "label": "Food",
             "option1": "Groceries",
             "option2": "Restaurants",
-            "option3": "Fancy Restaurant",
+            "option3": "Fancy Restaurant"
         },
         "accommodation": {
             "label": "Accommodation",
             "option1": "CouchSurfing",
             "option2": "Hostel",
-            "option3": "Hotel",
+            "option3": "Hotel"
         },
         "transportation": {
             "label": "Transportation",
             "option1": "Hitchhiking",
             "option2": "Ridesharing",
-            "option3": "Bus/Train",
+            "option3": "Bus/Train"
         }
+    },
+    "itinerary": {
+        "title": "I am traveling to..."
+    },
+    "account": {
+        "login": "Login",
+        "logout": "Logout",
+        "createAccount": "Create Account",
+        "accountManagement": "Account Management",
+        "myAccount": "My Account",
+        "email": "Email",
+        "resetPassword": "Reset Password",
+        "resetPasswordInstructions": "Enter your email address below and we will send you password reset instructions.",
+        "forgotPassword": "Forgot Password"
     }
 }
