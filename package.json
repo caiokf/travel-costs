@@ -7,13 +7,16 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --reporter spec --timeout 5000"
+    "mocha": "mocha --reporter spec --timeout 5000 specs/node --recursive",
+    "karma": "karma start",
+    "specs": "npm run mocha && npm run karma"
   },
   "dependencies": {
     "async": "^1.4.2",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.14.1",
     "cfenv": "1.0.x",
+    "chai-angular": "^1.0.3",
     "cheerio": "^0.19.0",
     "compression": "^1.6.0",
     "connect-assets": "^5.0.1",
@@ -49,10 +52,17 @@
     "yui": "^3.18.1"
   },
   "devDependencies": {
+    "angular-mocks": "^1.4.7",
     "blessed": "^0.1.81",
     "chai": "^3.3.0",
+    "karma": "^0.13.10",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.3",
     "multiline": "^1.0.2",
+    "phantomjs": "^1.9.18",
     "supertest": "^1.1.0"
   },
   "license": "MIT"
