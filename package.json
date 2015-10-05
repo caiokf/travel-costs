@@ -12,6 +12,7 @@
     "specs": "npm run mocha && npm run karma"
   },
   "dependencies": {
+    "angular": "^1.4.7",
     "async": "^1.4.2",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.14.1",
