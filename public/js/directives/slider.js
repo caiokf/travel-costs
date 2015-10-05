@@ -1,12 +1,14 @@
 angular.module('travelCosts.directives', [])
   .directive('slider', function() {
+
+    var min = 0;
+    var max = 10;
+
     return {
       restrict: 'E',
-      template: '<div class="slider" />',
+      template: '<div class="slider" min=' + min + ' max=' + 10 + ' />',
       replace: true,
       scope: {
-        min: "=min",
-        max: "=max",
         start: "=start",
         ngModel: '='
       },
@@ -16,8 +18,8 @@ angular.module('travelCosts.directives', [])
           start: [ scope.start ],
           step: 1,
           range: {
-            'min': [ scope.min ],
-            'max': [ scope.max ]
+            'min': [ min ],
+            'max': [ max ]
           }
         });
 

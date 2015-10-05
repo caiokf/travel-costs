@@ -2,13 +2,12 @@ module.exports = function(config) {
   config.set({
     basePath : '.',
     files : [
-        'public/js/lib/angular.min.js',
-        'node_modules/chai-angular/chai-angular.js',
+        'node_modules/angular/angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
+        'node_modules/chai-angular/chai-angular.js',
 
         'public/js/**/*.js',
-        'specs/public/*.js',
-        'specs/public/models/*.js'
+        'specs/public/**/*.js'
     ],
     exclude: [
         'public/js/lib/bootstrap.min.js'
