@@ -64,5 +64,12 @@
         "unlinkFacebook": "Unlink your Facebook account",
         "unlinkGoogle": "Unlink your Google account",
         "unlinkGithub": "Unlink your GitHub account"
+    },
+    "contact": {
+        "contactFormTitle": "Contact Us",
+        "name": "Name",
+        "Email": "Email",
+        "messageBodyLabel": "Body",
+        "sendButton": "Send"
     }
 }
