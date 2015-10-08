@@ -1,6 +1,6 @@
 angular.module('travelCosts.controllers', ['travelCosts.services']).
   
-  controller('TravelCostController', function ($scope, $http, CostsService) {
+  controller('TravelCostController', function ($scope, CostsService) {
 
     $scope.itinerary = [];
     $scope.cost = {
