@@ -25,5 +25,6 @@ bower_components
 .DS_Store
 Thumbs.db
 
+TODO
 config/secrets.js
 public/styles/main.css
