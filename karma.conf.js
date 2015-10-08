@@ -10,6 +10,7 @@ module.exports = function(config) {
         'specs/public/**/*.js'
     ],
     exclude: [
+        'public/js/lib/angular.min.js',
         'public/js/lib/bootstrap.min.js'
     ],
     plugins: ['karma-mocha', 'karma-chai', 'karma-phantomjs-launcher', 'karma-mocha-reporter'],
