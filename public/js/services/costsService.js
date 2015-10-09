@@ -30,6 +30,7 @@ angular.module('travelCosts.services', [])
           return results[0];
         }
       },
+
       getFactoredCosts: function (costs, foodSlider, accommodationSlider, transportationSlider) {
         var foodCosts = new CategoryCost(costs.food);
         var accommodationCosts = new CategoryCost(costs.accommodation);
@@ -45,5 +46,4 @@ angular.module('travelCosts.services', [])
         };
       }
     };
-
 });
