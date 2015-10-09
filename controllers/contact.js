@@ -52,7 +52,7 @@ exports.postContact = function(req, res) {
       req.flash('errors', { msg: err.message });
       return res.redirect('/contact');
     }
-    req.flash('success', { msg: 'Email has been sent successfully!' });
+    req.flash('success', { msg: t('contact.emailSentMessage') });
     res.redirect('/contact');
   });
 };

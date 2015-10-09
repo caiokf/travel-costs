@@ -67,6 +67,7 @@
         "name": "Name",
         "Email": "Email",
         "messageBodyLabel": "Body",
-        "sendButton": "Send"
+        "sendButton": "Send",
+        "emailSentMessage": "Email has been sent successfully!"
     }
 }
