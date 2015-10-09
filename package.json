@@ -1,5 +1,6 @@
 {
   "name": "travel-costs",
+  "description": "App for calculation how much your next trip will cost",
   "version": "0.0.1",
   "repository": {
     "type": "git",
