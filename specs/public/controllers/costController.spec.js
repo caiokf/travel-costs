@@ -22,9 +22,4 @@ describe('Travel Costs Controller', function() {
   it('should have USD as default currency', function() {
     expect(scope.cost.currency).to.equal('USD');
   });
-
-  it('should set cost according to sliders', function() {
-    expect(CostService.getCostFor).return(10);
-    expect(scope.cost.amount).to.equal(10);
-  });
 });
