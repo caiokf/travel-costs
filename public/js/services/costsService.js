@@ -1,5 +1,13 @@
 angular.module('travelCosts.services', [])
   .factory('CostsService', function () {
+
+    var defaultCost = {
+      name: '',
+      food: {option1: 0, option2: 0, option3: 0 },
+      transportation: {option1: 0, option2: 0, option3: 0 },
+      accommodation: {option1: 0, option2: 0, option3: 0 }
+    };
+
     var data = [
       { name: 'Brazil', food: {option1: 3.31, option2: 14.22, option3: 44.41 }, transportation: {option1: 0, option2: 16.2, option3: 24.3 }, accommodation: {option1: 0, option2: 7.60575, option3: 20.0876666666667 }},
       { name: 'Porto Alegre, Brazil', food: {option1: 3.81, option2: 13.72, option3: 54.14 }, transportation: {option1: 0, option2: 16.4, option3: 24.6 }, accommodation: {option1: 0, option2: 7.94175, option3: 17.4673333333333 }},
@@ -8,10 +16,16 @@ angular.module('travelCosts.services', [])
 
     return {
       getCostFor: function (location) {
+        var countryComponent = location.split(', ')[1];
+
         var results = _.filter(data, function(x) { return x.name == location; });
 
         if (results.length === 0) {
-          return data[0];
+          var countryAttempt = _.filter(data, function(x) { return x.name == countryComponent; });
+          if (countryAttempt.length > 0) {
+            return countryAttempt[0];
+          }
+          return defaultCost;
         } else {
           return results[0];
         }

@@ -20,6 +20,30 @@ describe('Costs Service', function() {
 
       expect(resultPortoAlegre).to.not.equal(resultZurich);
     });
+
+    it('should return default cost if city or location not found', function () {
+      var result = CostsService.getCostFor('somewhere over the rainbow');
+
+      expect(result.name).to.equal('');
+      expect(result.food.option1).to.equal(0);
+      expect(result.food.option2).to.equal(0);
+      expect(result.food.option3).to.equal(0);
+
+      expect(result.transportation.option1).to.equal(0);
+      expect(result.transportation.option2).to.equal(0);
+      expect(result.transportation.option3).to.equal(0);
+
+      expect(result.accommodation.option1).to.equal(0);
+      expect(result.accommodation.option2).to.equal(0);
+      expect(result.accommodation.option3).to.equal(0);
+    });
+
+    it('should return country cost if city not found', function () {
+      var resultBrazil = CostsService.getCostFor('Brazil');
+      var resultTiHugo = CostsService.getCostFor('Tio Hugo, Brazil');
+
+      expect(resultBrazil.name).to.equal(resultTiHugo.name);
+    });
   });
 
   describe('get factored costs', function () {
