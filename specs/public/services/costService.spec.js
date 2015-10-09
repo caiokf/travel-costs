@@ -13,6 +13,13 @@ describe('Costs Service', function() {
       var result = CostsService.getCostFor('');
       expect(result).to.be.an('object');
     });
+
+    it('should return different costs for different cities', function () {
+      var resultPortoAlegre = CostsService.getCostFor('Porto Alegre, Brazil');
+      var resultZurich = CostsService.getCostFor('Zurich, Switzerland');
+
+      expect(resultPortoAlegre).to.not.equal(resultZurich);
+    });
   });
 
   describe('get factored costs', function () {
