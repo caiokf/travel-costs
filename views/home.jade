@@ -49,17 +49,14 @@ block content
 
           div.itinerary
             input.itinerary-input#waypoint(type='text', ng-model="waypoint" autofocus)
-            div.itinerary-box
-              ul
-                li(ng-repeat="item in itinerary track by $index")
-                  .row
-                    .col-sm-1
-                      div.marker &nbsp;
-                    .col-sm-9
-                      span.location {{item.place.formatted_address}}
-                    .col-sm-1
-                      div.pull-right.icon-action-grey600.icon-action-grey600-ic_delete_grey600_24dp(
-                        ng-click='deleteWaypoint(item, $index)')
+            div.itinerary-box#itinerary-box
+              ul(as-sortable="sortingOptions")
+                li(ng-repeat="item in itinerary track by $index" as-sortable-item)
+                  div(as-sortable-item-handle)
+                    .marker &nbsp;
+                    span.location {{item.place.formatted_address}}
+                    .delete-icon.pull-right.icon-action-grey600.icon-action-grey600-ic_delete_grey600_24dp(
+                      ng-click='deleteWaypoint(item, $index)')
 
         .col-sm-9
           map#itinerary-map
