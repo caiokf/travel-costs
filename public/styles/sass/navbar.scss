@@ -10,6 +10,26 @@
       transition: all 0.2s linear;
     }
   }
+
+  .navbar-brand {
+    padding-top: 10px;
+  }
+
+  .icon-globe {
+    height: 32px;
+    width: 32px;
+    background-image: url('/images/globe-icon.png');
+    background-size: contain;
+    margin-bottom: -10px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    .icon-globe {
+ 
+    }
+  }
 }
 
 .navbar-nav img {
