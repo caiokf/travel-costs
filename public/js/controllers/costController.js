@@ -6,7 +6,11 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
     $scope.cost = {
       amount: 0,
       currency: 'USD'
-    }
+    };
+
+    $scope.$watchGroup(['sliderFood', 'sliderTransportation', 'sliderAccommodation', 'itinerary'],
+      function() { $scope.setCost(); }
+    );
 
     $scope.$on('mapInitialized', function(event, map) {
       $scope.map = map;
@@ -20,11 +24,6 @@ angular.module('travelCosts.controllers', ['travelCosts.services']).
         $scope.addWaypoint(autocomplete.getPlace());
       });
     });
-
-    $scope.$watch('sliderFood', function() { $scope.setCost(); });
-    $scope.$watch('sliderTransportation', function() { $scope.setCost(); });
-    $scope.$watch('sliderAccommodation', function() { $scope.setCost(); });
-    $scope.$watch('itinerary', function() { $scope.setCost(); });
 
     $scope.addWaypoint = function (waypoint) {
       var location = waypoint.geometry.location;

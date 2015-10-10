@@ -5,6 +5,7 @@ module.exports = function(config) {
         'node_modules/angular/angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'node_modules/chai-angular/chai-angular.js',
+        'node_modules/sinon/lib/sinon.js',
 
         'public/js/**/*.js',
         'specs/public/**/*.js'
